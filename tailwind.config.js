@@ -7,13 +7,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'italiana': ['"Italiana"', 'serif'],
-        'manrope': ['"Manrope"', 'sans-serif'],
+        'cormorant': ['"Cormorant Garamond"', 'serif'],
+        'montserrat': ['"Montserrat"', 'sans-serif'],
       },
       colors: {
-        'blush': '#FCE4EC',
-        'mauve': '#D8B4E2',
-        'soft-black': '#1a1a1a',
+        'sand': '#F5F5F0',
+        'glass': 'rgba(255, 255, 255, 0.1)',
+        'glass-border': 'rgba(255, 255, 255, 0.2)',
+        'text-dark': '#2C2C2C',
+      },
+      backdropBlur: {
+        'xs': '2px',
       }
     },
   },
