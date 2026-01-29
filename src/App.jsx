@@ -10,15 +10,8 @@ function App() {
   return (
     <div className="relative min-h-screen font-cormorant selection:bg-rose-200">
       
-      {/* Background Video/Texture */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#F5F5F0]"></div>
-        <img 
-          src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&q=80" 
-          className="w-full h-full object-cover opacity-80"
-          alt="Soft Background"
-        />
-      </div>
+      {/* Animated Gradient Background */}
+      <div className="fixed inset-0 z-0 bg-gradient-to-br from-[#F5F5F0] via-[#fff0f5] to-[#f3e5f5] bg-[length:400%_400%] animate-gradient"></div>
 
       {/* Navigation */}
       <nav className="fixed w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-darken">
@@ -38,7 +31,7 @@ function App() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center"
         >
-          <div className="glass-panel px-12 py-16 md:px-24 md:py-20 rounded-[2rem] text-center max-w-4xl mx-auto">
+          <div className="glass-panel px-12 py-16 md:px-24 md:py-20 rounded-[2rem] text-center max-w-4xl mx-auto border-white/40">
             <span className="font-montserrat text-xs tracking-[0.4em] uppercase text-gray-500 mb-6 block">
               Munich's Finest
             </span>
@@ -51,7 +44,7 @@ function App() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-text-dark text-white px-8 py-4 rounded-full font-montserrat text-xs uppercase tracking-widest hover:bg-rose-400 transition-colors shadow-lg"
+              className="bg-text-dark text-white px-8 py-4 rounded-full font-montserrat text-xs uppercase tracking-widest hover:bg-rose-400 transition-colors shadow-lg shadow-rose-200/50"
             >
               Book Your Moment
             </motion.button>
@@ -65,17 +58,17 @@ function App() {
         {/* Card 1: Left */}
         <div className="flex flex-col md:flex-row gap-12 items-center mb-40">
           <motion.div style={{ y: y1 }} className="md:w-1/2">
-            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl h-[600px] w-full">
+            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl shadow-rose-100 h-[600px] w-full">
               <img 
                 src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]"
                 alt="Styling"
               />
-              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="absolute inset-0 bg-white/10 mix-blend-soft-light"></div>
             </div>
           </motion.div>
           <div className="md:w-1/2 md:pl-20">
-            <h2 className="text-5xl md:text-7xl mb-8">The Craft</h2>
+            <h2 className="text-5xl md:text-7xl mb-8 font-light italic">The Craft</h2>
             <p className="font-montserrat text-gray-600 leading-loose text-lg">
               We don't chase trends; we interpret them. Our stylists are artists, using your hair as their canvas. 
               The result is a look that feels effortless, authentic, and undeniably you.
@@ -86,17 +79,17 @@ function App() {
         {/* Card 2: Right */}
         <div className="flex flex-col md:flex-row-reverse gap-12 items-center mb-40">
           <motion.div style={{ y: y2 }} className="md:w-1/2">
-            <div className="glass-panel p-12 rounded-[3rem] h-[500px] flex flex-col justify-center items-center text-center relative overflow-hidden group">
-              <div className="absolute inset-0 bg-rose-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <Sparkles className="w-12 h-12 text-rose-400 mb-6 relative z-10" />
-              <h3 className="text-4xl md:text-5xl mb-6 relative z-10">Premium Care</h3>
+            <div className="glass-panel p-12 rounded-[3rem] h-[500px] flex flex-col justify-center items-center text-center relative overflow-hidden group border-white/40">
+              <div className="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <Sparkles className="w-12 h-12 text-rose-300 mb-6 relative z-10" />
+              <h3 className="text-4xl md:text-5xl mb-6 relative z-10 italic">Premium Care</h3>
               <p className="font-montserrat text-gray-600 max-w-xs relative z-10">
                 Using only organic, sustainable products that nourish your hair and respect the planet.
               </p>
             </div>
           </motion.div>
           <div className="md:w-1/2 md:pr-20 text-right">
-            <h2 className="text-5xl md:text-7xl mb-8">Pure Ingredients</h2>
+            <h2 className="text-5xl md:text-7xl mb-8 font-light italic">Pure Ingredients</h2>
             <p className="font-montserrat text-gray-600 leading-loose text-lg">
               From Oribe to Davines. We curate the finest products to ensure your hair not only looks spectacular but feels healthy and resilient.
             </p>
@@ -105,8 +98,8 @@ function App() {
 
         {/* Menu / Prices */}
         <div className="max-w-4xl mx-auto mb-40">
-          <div className="glass-panel p-12 md:p-20 rounded-[2rem]">
-            <h2 className="text-center text-5xl mb-16 italic">Service Menu</h2>
+          <div className="glass-panel p-12 md:p-20 rounded-[2rem] border-white/40">
+            <h2 className="text-center text-5xl mb-16 italic font-light">Service Menu</h2>
             <div className="space-y-8 font-montserrat">
               {[
                 { name: "Cut & Styling", price: "from 85€" },
@@ -114,7 +107,7 @@ function App() {
                 { name: "Balayage Art", price: "from 180€" },
                 { name: "Glossing Treatment", price: "from 45€" }
               ].map((item, i) => (
-                <div key={i} className="flex justify-between items-end border-b border-gray-300 pb-4 hover:pl-4 transition-all cursor-default">
+                <div key={i} className="flex justify-between items-end border-b border-gray-300/50 pb-4 hover:pl-4 transition-all cursor-default hover:border-rose-300">
                   <span className="text-lg font-medium tracking-wide">{item.name}</span>
                   <span className="text-lg font-light text-gray-500">{item.price}</span>
                 </div>
@@ -126,10 +119,10 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 bg-white py-20 px-6 rounded-t-[3rem] shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+      <footer className="relative z-10 bg-white/60 backdrop-blur-xl py-20 px-6 rounded-t-[3rem] shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           <div>
-            <h3 className="font-bold tracking-widest mb-6 font-montserrat text-sm">FIND US</h3>
+            <h3 className="font-bold tracking-widest mb-6 font-montserrat text-sm text-gray-400">FIND US</h3>
             <div className="flex items-center justify-center md:justify-start gap-4 text-gray-600 mb-4">
               <MapPin size={18} />
               <span>Brienner Str. 11, Munich</span>
@@ -144,7 +137,7 @@ function App() {
             <p className="text-xs font-montserrat text-gray-400">© 2026. Made with Soul.</p>
           </div>
           <div className="md:text-right">
-            <h3 className="font-bold tracking-widest mb-6 font-montserrat text-sm">OPENING HOURS</h3>
+            <h3 className="font-bold tracking-widest mb-6 font-montserrat text-sm text-gray-400">OPENING HOURS</h3>
             <div className="text-gray-600 space-y-2">
               <p>Tue - Fri: 10:00 - 19:00</p>
               <p>Sat: 09:00 - 16:00</p>
