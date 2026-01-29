@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@200;300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f8f5f2;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
